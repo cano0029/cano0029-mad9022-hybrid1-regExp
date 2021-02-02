@@ -3,7 +3,7 @@ function init(ev) {
   form.addEventListener('submit', validateForm);
 
   //add individual listeners - change listener to ALL input elements
-  document.getElementById('fullname').addEventListener('change', validateName);
+  document.getElementById('fullname').addEventListener('change', validateFullName);
   document.getElementById('email').addEventListener('change', validateEmail);
   document.getElementById('address').addEventListener('change', validateAddress);
   document.getElementById('city').addEventListener('change', validateCity);
@@ -14,24 +14,21 @@ function init(ev) {
 function validateForm(ev) {
   //validate the whole form
   ev.preventDefault();
-  // validateName();
+  //validateName();
   // validateEmail();
   // validateAddress();
   // validateCity();
   // validateProv();
   // validatePostal();
-
+  console.log('cannot submit');
 }
 
-//still includes numbers for the last name
-function validateName(ev) {
-  //validate the full name input with a regular expression
+function validateFullName(ev) {
   let regExp = /^[a-zA-Z]*( |-)[a-zA-Z]*( |-)*[a-zA-Z]*$/g;
   let txt = ev.target.value;
-  let noHyphen = txt.replace(/-/gi, "");
-  let error = document.querySelector('.error-fullname');
+  let error = document.querySelector('.error-name');
   
-  if(regExp.test(noHyphen)){
+  if(regExp.test(txt)){
     error.innerHTML ='';
   }else {
     error.innerHTML ='Invalid full name';
@@ -39,9 +36,7 @@ function validateName(ev) {
 
 }
 
-//but example...123@gmail.com is still valid
 function validateEmail(ev) {
-  //validate the full name input with a regular expression
   let regExp = /^[a-zA-Z0-9\.!#$%&'*+=?^_`{|}~-]*@[a-zA-Z0-9-]*(\.[a-zA-Z]{2,4})?$/g;
   let email = ev.target.value;
   let error = document.querySelector('.error-email');
@@ -52,8 +47,6 @@ function validateEmail(ev) {
     error.innerHTML ='Invalid email';
   }
 }
-
-
 
 function validateAddress(ev) {
   let regExp = /^\d{1,7}( |-)?([a-zA-Z]|\d)*( [a-zA-Z-]+\.?){1,4}(Rd|Lane|Cres|St|Ave|Circle|)\.?/g;
@@ -82,6 +75,7 @@ function validateCity(ev) {
 function validateProvince(ev) {
   let province = ev.target.value;
   let error = document.querySelector('.error-prov');
+  
   if(province === "selectOption"){
     error.innerHTML= 'Invalid selection';
   }else {
