@@ -1,0 +1,14 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+input, select {
+    padding:0.2rem;
+    width: 8rem;;
+}
+
+label, input {
+    font-size: 0.8rem;
+}
