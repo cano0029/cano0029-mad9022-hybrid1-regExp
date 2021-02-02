@@ -25,15 +25,14 @@ function validateForm(ev) {
 
 function validateFullName(ev) {
   let regExp = /^[a-zA-Z]*( |-)[a-zA-Z]*( |-)*[a-zA-Z]*$/g;
-  let txt = ev.target.value;
+  let fullName = ev.target.value;
   let error = document.querySelector('.error-name');
   
-  if(regExp.test(txt)){
+  if(regExp.test(fullName)){
     error.innerHTML ='';
   }else {
     error.innerHTML ='Invalid full name';
   }
-
 }
 
 function validateEmail(ev) {
@@ -61,7 +60,7 @@ function validateAddress(ev) {
 }
 
 function validateCity(ev) {
-  let regExp = /^[a-zA-Z]*([ |-][a-zA-Z]+)*$/g
+  let regExp = /^[a-zA-Z]{2,}([ |-][a-zA-Z]+)*$/g
   let city = ev.target.value;
   let error = document.querySelector('.error-city');
 
