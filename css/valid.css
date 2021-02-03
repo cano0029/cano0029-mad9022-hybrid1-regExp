@@ -30,7 +30,7 @@ label {
 }
 
 input, option, select {
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(211, 211, 211);
     border: none;
     padding:0.5rem;
     width: 100%;
