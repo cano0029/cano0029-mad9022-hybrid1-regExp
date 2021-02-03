@@ -34,7 +34,6 @@ function validateFullName(ev) {
   let regExp = /^[a-zA-Z]*( |-)[a-zA-Z]*( |-)*[a-zA-Z]*$/g;
   let fullName;
   let errorMessage = document.querySelector('.error-name');
-  
 
   if (typeof ev === 'string') {
     fullName = ev;
@@ -113,10 +112,10 @@ function validateProvince(ev) {
     province = ev.target.value;
   }
 
-  if(province === "selectOption"){
-    errorMessage.innerHTML= 'Invalid selection';
-  }else {
+  if(province !== "selectOption"){
     errorMessage.innerHTML= '';
+  }else {
+    errorMessage.innerHTML= 'Invalid selection';
   }
 }
 
