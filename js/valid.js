@@ -32,8 +32,15 @@ function validateForm(ev) {
 
 function validateFullName(ev) {
   let regExp = /^[a-zA-Z]*( |-)[a-zA-Z]*( |-)*[a-zA-Z]*$/g;
-  let fullName = ev.target.value;
+  let fullName;
   let errorMessage = document.querySelector('.error-name');
+  
+
+  if (typeof ev === 'string') {
+    fullName = ev;
+  } else {
+    fullName = ev.target.value;
+  }
 
   if(regExp.test(fullName)){
     errorMessage.innerHTML ='';
@@ -44,8 +51,14 @@ function validateFullName(ev) {
 
 function validateEmail(ev) {
   let regExp = /^[a-zA-Z0-9\.!#$%&'*+=?^_`{|}~-]*@[a-zA-Z0-9-]*\.[a-zA-Z]{2,4}$/g;
-  let email = ev.target.value;
+  let email;
   let errorMessage = document.querySelector('.error-email');
+
+  if (typeof ev === 'string') {
+    email = ev;
+  } else {
+    email = ev.target.value;
+  }
 
   if(regExp.test(email)){
     errorMessage.innerHTML ='';
@@ -56,8 +69,14 @@ function validateEmail(ev) {
 
 function validateAddress(ev) {
   let regExp = /^\d{1,7}( |-)?([a-zA-Z]|\d)*( [a-zA-Z-]+\.?){1,5}(Rd|Ln|Blvd|Cres|St|Ave|Cir|Crt|Pl|)\.?$/g;
-  let address = ev.target.value;
+  let address;
   let errorMessage = document.querySelector('.error-address');
+
+  if (typeof ev === 'string') {
+    address = ev;
+  } else {
+    address = ev.target.value;
+  }
 
   if(regExp.test(address)){
     errorMessage.innerHTML ='';
@@ -68,8 +87,14 @@ function validateAddress(ev) {
 
 function validateCity(ev) {
   let regExp = /^[a-zA-Z]{2,}([ |-][a-zA-Z]+)*$/g
-  let city = ev.target.value;
+  let city;
   let errorMessage = document.querySelector('.error-city');
+
+  if (typeof ev === 'string') {
+    city = ev;
+  } else {
+    city = ev.target.value;
+  }
 
   if(regExp.test(city)){
     errorMessage.innerHTML ='';
@@ -79,8 +104,14 @@ function validateCity(ev) {
 }
 
 function validateProvince(ev) {
-  let province = ev.target.value;
+  let province;
   let errorMessage = document.querySelector('.error-prov');
+  
+  if (typeof ev === 'string') {
+    province = ev;
+  } else {
+    province = ev.target.value;
+  }
 
   if(province === "selectOption"){
     errorMessage.innerHTML= 'Invalid selection';
@@ -91,8 +122,14 @@ function validateProvince(ev) {
 
 function validatePostal(ev) {
   let regExp = /^[a-zA-Z]\d[a-zA-Z]( |-)?\d[a-zA-Z]\d$/g
-  let postal = ev.target.value;
+  let postal;
   let errorMessage = document.querySelector('.error-post');
+
+  if (typeof ev === 'string') {
+    postal = ev;
+  } else {
+    postal = ev.target.value;
+  }
 
   if(regExp.test(postal)){
     errorMessage.innerHTML ='';
