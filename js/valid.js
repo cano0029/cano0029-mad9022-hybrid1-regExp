@@ -28,7 +28,6 @@ function validateForm(ev) {
     validateCity(city);
     validateProvince(province);
     validatePostal(postal);
-    console.log('HEEY');
 }
 
 function validateFullName(ev) {
