@@ -33,7 +33,7 @@ function validateForm(ev) {
 function validateFullName(ev) {
   let regExp = /^[a-zA-Z]*( |-)[a-zA-Z]*( |-)*[a-zA-Z]*$/g;
   let fullName;
-  let errorMssg = document.querySelector('.error-name');
+  let errorMessage = document.querySelector('.error-name');
   
 
   if (typeof ev === 'string') {
@@ -43,16 +43,16 @@ function validateFullName(ev) {
   }
 
   if(regExp.test(fullName)){
-    errorMssg.innerHTML ='';
+    errorMessage.innerHTML ='';
   }else {
-    errorMssg.innerHTML ='Invalid full name';
+    errorMessage.innerHTML ='Invalid full name';
   }
 }
 
 function validateEmail(ev) {
   let regExp = /^[a-zA-Z0-9\.!#$%&'*+=?^_`{|}~-]*@[a-zA-Z0-9-]*\.[a-zA-Z]{2,4}$/g;
   let email;
-  let errorMssg = document.querySelector('.error-email');
+  let errorMessage = document.querySelector('.error-email');
 
   if (typeof ev === 'string') {
     email = ev;
@@ -61,16 +61,16 @@ function validateEmail(ev) {
   }
 
   if(regExp.test(email)){
-    errorMssg.innerHTML ='';
+    errorMessage.innerHTML ='';
   }else {
-    errorMssg.innerHTML ='Invalid email';
+    errorMessage.innerHTML ='Invalid email';
   }
 }
 
 function validateAddress(ev) {
   let regExp = /^\d{1,7}( |-)?([a-zA-Z]|\d)*( [a-zA-Z-]+\.?){1,5}(Rd|Ln|Blvd|Cres|St|Ave|Cir|Crt|Pl|)\.?$/g;
   let address;
-  let errorMssg = document.querySelector('.error-address');
+  let errorMessage = document.querySelector('.error-address');
 
   if (typeof ev === 'string') {
     address = ev;
@@ -79,16 +79,16 @@ function validateAddress(ev) {
   }
 
   if(regExp.test(address)){
-    errorMssg.innerHTML ='';
+    errorMessage.innerHTML ='';
   }else {
-    errorMssg.innerHTML ='Invalid address';
+    errorMessage.innerHTML ='Invalid address';
   }
 }
 
 function validateCity(ev) {
   let regExp = /^[a-zA-Z]{2,}([ |-][a-zA-Z]+)*$/g
   let city;
-  let errorMssg = document.querySelector('.error-city');
+  let errorMessage = document.querySelector('.error-city');
 
   if (typeof ev === 'string') {
     city = ev;
@@ -97,15 +97,15 @@ function validateCity(ev) {
   }
 
   if(regExp.test(city)){
-    errorMssg.innerHTML ='';
+    errorMessage.innerHTML ='';
   }else {
-    errorMssg.innerHTML ='Invalid city';
+    errorMessage.innerHTML ='Invalid city';
   }
 }
 
 function validateProvince(ev) {
   let province;
-  let errorMssg = document.querySelector('.error-prov');
+  let errorMessage = document.querySelector('.error-prov');
   
   if (typeof ev === 'string') {
     province = ev;
@@ -114,16 +114,16 @@ function validateProvince(ev) {
   }
 
   if(province === "selectOption"){
-    errorMssg.innerHTML= 'Invalid selection';
+    errorMessage.innerHTML= 'Invalid selection';
   }else {
-    errorMssg.innerHTML= '';
+    errorMessage.innerHTML= '';
   }
 }
 
 function validatePostal(ev) {
   let regExp = /^[a-zA-Z]\d[a-zA-Z]( |-)?\d[a-zA-Z]\d$/g
   let postal;
-  let errorMssg = document.querySelector('.error-post');
+  let errorMessage = document.querySelector('.error-post');
 
   if (typeof ev === 'string') {
     postal = ev;
@@ -132,9 +132,9 @@ function validatePostal(ev) {
   }
 
   if(regExp.test(postal)){
-    errorMssg.innerHTML ='';
+    errorMessage.innerHTML ='';
   }else {
-    errorMssg.innerHTML ='Invalid postal code';
+    errorMessage.innerHTML ='Invalid postal code';
   }
 }
 
