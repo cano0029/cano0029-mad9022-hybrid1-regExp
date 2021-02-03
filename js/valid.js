@@ -22,119 +22,119 @@ function validateForm(ev) {
   let province = document.getElementById('prov').value;
   let postal = document.getElementById('post').value;
   
-    validateFullName(fullName);
-    validateEmail(email);
-    validateAddress(address);
-    validateCity(city);
-    validateProvince(province);
-    validatePostal(postal);
+  validateFullName(fullName);
+  validateEmail(email);
+  validateAddress(address);
+  validateCity(city);
+  validateProvince(province);
+  validatePostal(postal);
 }
 
 function validateFullName(ev) {
   let regExp = /^[a-zA-Z]*( |-)[a-zA-Z]*( |-)*[a-zA-Z]*$/g;
-  // let fullName = ev.target.value;
-  let error = document.querySelector('.error-name');
+  let fullName;
+  let errorMssg = document.querySelector('.error-name');
   
 
   if (typeof ev === 'string') {
-    var fullName = ev;
+    fullName = ev;
   } else {
-    var fullName = ev.target.value;
+    fullName = ev.target.value;
   }
 
   if(regExp.test(fullName)){
-    error.innerHTML ='';
+    errorMssg.innerHTML ='';
   }else {
-    error.innerHTML ='Invalid full name';
+    errorMssg.innerHTML ='Invalid full name';
   }
 }
 
 function validateEmail(ev) {
   let regExp = /^[a-zA-Z0-9\.!#$%&'*+=?^_`{|}~-]*@[a-zA-Z0-9-]*\.[a-zA-Z]{2,4}$/g;
-  // let email = ev.target.value;
-  let error = document.querySelector('.error-email');
+  let email;
+  let errorMssg = document.querySelector('.error-email');
 
   if (typeof ev === 'string') {
-    var email = ev;
+    email = ev;
   } else {
-    var email = ev.target.value;
+    email = ev.target.value;
   }
 
   if(regExp.test(email)){
-    error.innerHTML ='';
+    errorMssg.innerHTML ='';
   }else {
-    error.innerHTML ='Invalid email';
+    errorMssg.innerHTML ='Invalid email';
   }
 }
 
 function validateAddress(ev) {
-  let regExp = /^\d{1,7}( |-)?([a-zA-Z]|\d)*( [a-zA-Z-]+\.?){1,4}(Rd|Lane|Cres|St|Ave|Circle|)\.?/g;
-  // let address = ev.target.value;
-  let error = document.querySelector('.error-address');
+  let regExp = /^\d{1,7}( |-)?([a-zA-Z]|\d)*( [a-zA-Z-]+\.?){1,5}(Rd|Ln|Blvd|Cres|St|Ave|Cir|Crt|Pl|)\.?$/g;
+  let address;
+  let errorMssg = document.querySelector('.error-address');
 
   if (typeof ev === 'string') {
-    var address = ev;
+    address = ev;
   } else {
-    var address = ev.target.value;
+    address = ev.target.value;
   }
 
   if(regExp.test(address)){
-    error.innerHTML ='';
+    errorMssg.innerHTML ='';
   }else {
-    error.innerHTML ='Invalid address';
+    errorMssg.innerHTML ='Invalid address';
   }
 }
 
 function validateCity(ev) {
   let regExp = /^[a-zA-Z]{2,}([ |-][a-zA-Z]+)*$/g
-  // let city = ev.target.value;
-  let error = document.querySelector('.error-city');
+  let city;
+  let errorMssg = document.querySelector('.error-city');
 
   if (typeof ev === 'string') {
-    var city = ev;
+    city = ev;
   } else {
-    var city = ev.target.value;
+    city = ev.target.value;
   }
 
   if(regExp.test(city)){
-    error.innerHTML ='';
+    errorMssg.innerHTML ='';
   }else {
-    error.innerHTML ='Invalid city';
+    errorMssg.innerHTML ='Invalid city';
   }
 }
 
 function validateProvince(ev) {
-  // let province = ev.target.value;
-  let error = document.querySelector('.error-prov');
+  let province;
+  let errorMssg = document.querySelector('.error-prov');
   
   if (typeof ev === 'string') {
-    var province = ev;
+    province = ev;
   } else {
-    var province = ev.target.value;
+    province = ev.target.value;
   }
 
   if(province === "selectOption"){
-    error.innerHTML= 'Invalid selection';
+    errorMssg.innerHTML= 'Invalid selection';
   }else {
-    error.innerHTML= '';
+    errorMssg.innerHTML= '';
   }
 }
 
 function validatePostal(ev) {
   let regExp = /^[a-zA-Z]\d[a-zA-Z]( |-)?\d[a-zA-Z]\d$/g
-  // let postal = ev.target.value;
-  let error = document.querySelector('.error-post');
+  let postal;
+  let errorMssg = document.querySelector('.error-post');
 
   if (typeof ev === 'string') {
-    var postal = ev;
+    postal = ev;
   } else {
-    var postal = ev.target.value;
+    postal = ev.target.value;
   }
 
   if(regExp.test(postal)){
-    error.innerHTML ='';
+    errorMssg.innerHTML ='';
   }else {
-    error.innerHTML ='Invalid postal code';
+    errorMssg.innerHTML ='Invalid postal code';
   }
 }
 
